@@ -61,8 +61,6 @@ public class Solver {
             map.put( k, map.get( k ) + 1 );
         }
         
-        Collections.sort( list );
-        
         long similarity = 0;
         
         for ( int k : list ) {
