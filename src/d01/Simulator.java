@@ -48,9 +48,9 @@ public class Simulator extends EngineFrame {
             setDefaultFontSize( 60 );
             
             list = new ArrayList<>();
-            map = new HashMap<>();     
+            map = new HashMap<>();
             similarity = 0;
-
+            
             while ( scan.hasNextLine() ) {
                 list.add( scan.nextInt() );
                 int k = scan.nextInt();
