@@ -10,12 +10,12 @@ import java.util.Scanner;
  */
 public class Utils {
     
-    public static Scanner getScannerSmall( Class klass ) throws Exception {
-        return new Scanner( new File( "resources/testData/" + klass.getPackageName() + "/small.txt" ) );
+    public static Scanner getScannerEasy( Class klass ) throws Exception {
+        return new Scanner( new File( "resources/testData/" + klass.getPackageName() + "/easy.txt" ) );
     }
     
-    public static Scanner getScannerLarge( Class klass ) throws Exception {
-        return new Scanner( new File( "resources/testData/" + klass.getPackageName() + "/large.txt" ) );
+    public static Scanner getScannerHard( Class klass ) throws Exception {
+        return new Scanner( new File( "resources/testData/" + klass.getPackageName() + "/hard.txt" ) );
     }
     
     public static Scanner getScannerForString( String inputString ) throws Exception {

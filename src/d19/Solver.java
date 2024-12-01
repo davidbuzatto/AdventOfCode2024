@@ -11,17 +11,17 @@ public class Solver {
     
     public static void main( String[] args ) throws Exception {
         
-        //solveSmall();
-        //solveLarge();
+        //solveEasy();
+        //solveHard();
         
     }
     
-    private static void solveSmall() throws Exception {
-        Scanner scan = Utils.getScannerSmall( Solver.class );
+    private static void solveEasy() throws Exception {
+        Scanner scan = Utils.getScannerEasy( Solver.class );
     }
     
-    private static void solveLarge() throws Exception {
-        Scanner scan = Utils.getScannerLarge( Solver.class );
+    private static void solveHard() throws Exception {
+        Scanner scan = Utils.getScannerHard( Solver.class );
     }
     
 }
