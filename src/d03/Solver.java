@@ -55,19 +55,30 @@ public class Solver {
             sb.append( scan.nextLine() );
         }
         
-        Pattern p = Pattern.compile( "(mul\\(\\d+,\\d+\\))" );
+        Pattern p = Pattern.compile( "(do\\(\\))|(don't\\(\\))|(mul\\(\\d+,\\d+\\))" );
         Matcher m = p.matcher( sb.toString() );
         int sum = 0;
+        boolean process = true;
         
         while ( m.find() ) {
-            String e = m.group(1);
-            Pattern pe = Pattern.compile( "(\\d+),(\\d+)" );
-            Matcher me = pe.matcher( e );
-            while ( me.find() ) {
-                int n1 = Integer.parseInt( me.group(1) );
-                int n2 = Integer.parseInt( me.group(2) );
-                int mult = n1 * n2;
-                sum += mult;
+            String doo = m.group(1);
+            String dont = m.group(2);
+            String mu = m.group(3);
+            if ( doo != null ) {
+                process = true;
+            } else if ( dont != null ) {
+                process = false;
+            }
+            
+            if ( mu != null && process ) {
+                Pattern pe = Pattern.compile( "(\\d+),(\\d+)" );
+                Matcher me = pe.matcher( mu );
+                while ( me.find() ) {
+                    int n1 = Integer.parseInt( me.group(1) );
+                    int n2 = Integer.parseInt( me.group(2) );
+                    int mult = n1 * n2;
+                    sum += mult;
+                }
             }
         }
         
